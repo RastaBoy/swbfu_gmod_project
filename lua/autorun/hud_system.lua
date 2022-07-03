@@ -40,20 +40,25 @@ if LocalPlayer then
         local MiddleHPColor = Color(255, 165, 0, 230)
         local LowHPColor = Color(255, 0, 0, 230)
 
-        local healthState = 0
+        local healthState = ply:Health()/ply:GetMaxHealth()
+
+        local lineCount = math.ceil(healthState*8)
+
         local healthColor = MaxHPColor
 
+        if healthState >= 0.8 then
+            healthColor = MaxHPColor
+        elseif healthState >= 0.6 then
+            healthColor = MiddleHPColor
+        else
+            healthColor = LowHPColor
+        end
 
-        for i = 1, 8 do
-            if ply:Health() >= ply:GetMaxHealth() * (6/8) then
-                if ply:Health() >= ply:GetMaxHealth() * (7/8) and ply:Health() <= ply:GetMaxHealth() then
-                    -- Left --        
-                    draw.RoundedBox(45, SegmentSizeW + indentHW, ScreenHeight - SegmentSizeH + indentHH + (15 * i), 140, 10, MaxHPColor)
-                    -- Right --
-                    draw.RoundedBox(45, ScreenWidth - SegmentSizeW - indentHW - 140, ScreenHeight - SegmentSizeH + indentHH + (15 * i), 140, 10, MaxHPColor)
-                end
-            end
-
+        for i = 1, lineCount do
+            -- Left --        
+            draw.RoundedBox(45, SegmentSizeW + indentHW, ScreenHeight - 10 - (15 * i), 140, 10, healthColor)
+            -- Right --
+            draw.RoundedBox(45, ScreenWidth - SegmentSizeW - indentHW - 140, ScreenHeight - 10 - (15 * i), 140, 10, healthColor)
         end
 
     end
