@@ -1,10 +1,12 @@
+--[[
+
 if SERVER then
 	AddCSLuaFile()
 end
 
 
 if LocalPlayer then
-
+    PrintTable(LocalPlayer():GetPlayerInfo())
     local HiddenElements = {
 		['CHudHealth']=true,
 		['CHudBattery']=true,
@@ -70,3 +72,5 @@ if LocalPlayer then
     hook.Add( 'HUDShouldDraw', 'BFUHideHUD', BFUHideHUD )
 	hook.Add( 'HUDPaint', 'BFUHUDDraw', BFUHUDDraw )
 end
+
+]]

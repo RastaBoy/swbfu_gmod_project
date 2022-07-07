@@ -1,0 +1,14 @@
+"swbfugamemode"
+{
+	"base"		"base"
+	"title"		"Star Wars Battlefront Unlimited"
+	"maps"		"^swbfu_"
+	"category"	"SWBFU"
+	"menusystem"	"1"
+
+	"settings"
+	{
+		
+	}
+
+}
