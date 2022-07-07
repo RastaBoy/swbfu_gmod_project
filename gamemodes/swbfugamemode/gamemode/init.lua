@@ -3,32 +3,9 @@ AddCSLuaFile( "shared.lua" )
 
 include("shared.lua")
 
-
-function GM:PlayerConnect(name, ip)
-    print(name .. " connected")
-end
-
-function GM:PlayerSpawn( ply )
-	GM:PlayerSpawnAsSpectator( ply )
-end
-
-function GM:PlayerSpawnAsSpectator( ply )
-    print("Player spawn as spectator")
-end
+-- Импорт всех файлов из паки Controllers
+AddCSLuaFile("controllers/lobby_controller/cl_lobby_controller.lua")
+include("controllers/lobby_controller/sv_lobby_controller.lua")
 
 
-function GM:PlayerCanJoinTeam(ply, team)
-    return true
-end
-
-function GM:MenuStart()
-    print("Menu Start!")
-end
-
-function GM:PlayerInitialSpawn(player)
-    print("PlayerInitialSpawn")
-    player:SetTeam(1)
-    player:SetClassID(1)
-    PrintTable(player:GetPlayerInfo())
-end
 

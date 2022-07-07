@@ -8,3 +8,7 @@ function GM:Initialize()
     print("Hello world! \nIt is Star Wars: Battlefront Unlimited. WOW!")
     self.BaseClass.Initialize()
 end
+
+function GM:PlayerConnect(name, ip)
+    print(name .. " connected")
+end
