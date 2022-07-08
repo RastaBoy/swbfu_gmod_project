@@ -11,7 +11,7 @@ classes_info = {
     clone_trooper_ph2 = {
         name = "Clone Trooper Phase 2",
         class = "trooper",
-        model = "models/player/swbtc/phase 1 clone trooper.mdl",
+        model = "models/player/cody/commander cody.mdl",
         weapons = {
             "Weapon 1",
             "Weapon 2"
