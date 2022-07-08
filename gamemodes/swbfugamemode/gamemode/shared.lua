@@ -12,3 +12,8 @@ end
 function GM:PlayerConnect(name, ip)
     print(name .. " connected")
 end
+
+function GM:PlayerSpawn(ply)
+    ply:Spectate(6)
+    ply:SetObserverMode(6)
+end

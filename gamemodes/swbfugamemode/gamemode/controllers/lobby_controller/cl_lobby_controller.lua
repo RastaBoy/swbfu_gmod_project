@@ -1,24 +1,30 @@
 AddCSLuaFile()
+include("gui/main_menu.lua")
+
+local player_selected_class = 1
 
 net.Receive("SelectClass", function()
-    local Frame = vgui.Create( "DFrame" )
-    Frame:SetTitle( "Test panel" )
-    Frame:SetSize( 300,300 )
-    Frame:Center()			
-    Frame:MakePopup()
-    Frame.Paint = function( self, w, h ) -- 'function Frame:Paint( w, h )' works too
-        draw.RoundedBox( 0, 0, 0, w, h, Color( 231, 76, 60, 150 ) ) -- Draw a red box instead of the frame
+    print("Message received...")
+    local classSelector = vgui.Create( "PlayerClassSelector" )
+    -- Начинаем добавлять кнопки --
+    local classesTable = net.ReadTable()
+
+    local btnW = 300
+    local btnH = 100
+
+    for key, value in pairs(classesTable) do
+        PrintTable(value)
+        local Button = vgui.Create("DButton", classSelector)
+        Button:SetText(value["name"])
+        Button:SetPos(150, 150 + ((btnH + 10)*key))
+        Button:SetSize(btnW, btnH)
+        Button.DoClick = function()
+            print("Before:" .. player_selected_class)
+            player_selected_class = key
+            print("After:" .. player_selected_class)
+        end
+
     end
-            
-    local Button = vgui.Create("DButton", Frame)
-    Button:SetText( "Click me I'm pretty!" )
-    Button:SetTextColor( Color(255,255,255) )
-    Button:SetPos( 100, 100 )
-    Button:SetSize( 100, 30 )
-    Button.Paint = function( self, w, h )
-        draw.RoundedBox( 0, 0, 0, w, h, Color( 41, 128, 185, 250 ) ) -- Draw a blue button
-    end
-    Button.DoClick = function()
-        print( "I was clicked!" )
-    end
+
+    --PrintTable(classesTable)
 end)
