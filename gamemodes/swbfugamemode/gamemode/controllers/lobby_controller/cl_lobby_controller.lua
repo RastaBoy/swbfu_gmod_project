@@ -3,7 +3,6 @@ include("gui/main_menu.lua")
 
 local player_selected_class = 1
 
---util.AddNetworkString( "PlayerClassSelected" )
 
 net.Receive("SelectClass", function()
     print("Message received...")
@@ -113,7 +112,13 @@ net.Receive("SelectClass", function()
     spawnBtn:SetSize(spawnBtnSize["w"], spawnBtnSize["h"])
     function spawnBtn:DoClick(self) 
         print("Spawn Me!")
-        PrintTable(classesTable[player_selected_class])
+        -- PrintTable(classesTable[player_selected_class])
+        -- Отправляем информацию о выбранном классе на сервер 
+        net.Start("PlayerClassSelected")
+        net.WriteTable(classesTable[player_selected_class])
+        net.SendToServer()
+
+        classSelector:Hide()
     end
 
     -- Панель информации и карта спавна --
