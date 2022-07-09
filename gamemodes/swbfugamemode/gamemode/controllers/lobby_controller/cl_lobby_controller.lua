@@ -78,7 +78,7 @@ net.Receive("SelectClass", function()
     -- Начинаем добавлять кнопки --
     local choiceBtnSize = {
         w = columns[1]["w"] * 0.8,
-        h = 130,
+        h = 90,
         step = 20,
         stepH = 90
     }
@@ -114,6 +114,34 @@ net.Receive("SelectClass", function()
     function spawnBtn:DoClick(self) 
         print("Spawn Me!")
         PrintTable(classesTable[player_selected_class])
+    end
+
+    -- Панель информации и карта спавна --
+    local infoPanelSize = {
+        x = columns[3]["posX"] + columns[3]["w"]/2 - (columns[3]["w"]*0.8)/2,
+        w = columns[3]["w"]*0.8,
+        h = columns[3]["h"]*2/3,
+        stepUp = 200
+    }
+    local infoPanel = vgui.Create("DFrame", classSelector)
+    infoPanel:SetPos(infoPanelSize["x"], infoPanelSize["stepUp"])
+    infoPanel:SetSize(infoPanelSize["w"], infoPanelSize["h"])
+    infoPanel:SetVisible(true)
+    infoPanel:MakePopup()
+    infoPanel:ShowCloseButton(false)
+    infoPanel:SetDraggable(false)
+    infoPanel:SetTitle("")
+    function infoPanel:Paint(w, h) 
+        draw.RoundedBox(5, 0, 0, w, h, Color(255, 0, 0, 10))
+        -- Map points --
+        draw.RoundedBox(5, 0, 0, w, h*2/3, Color(0, 255, 0, 10))
+        -- Class Info panel --
+        draw.RoundedBox(5, 0, h*2/3, w, h*1/3, Color(0, 0, 255, 10))
+        local class_info = "Name: " .. classesTable[player_selected_class]["name"] .. "\n" .. "Class: " .. classesTable[player_selected_class]["class"] .. "\n"
+        for _, value in pairs(classesTable[player_selected_class]["weapons"]) do
+            class_info = class_info .. value .. "\n"
+        end
+        draw.DrawText(class_info, "DermaLarge", w/8, h*2/3 + h*1/3/4, Color(255,255,255,255))
     end
 
     -- Настройка векторов --
