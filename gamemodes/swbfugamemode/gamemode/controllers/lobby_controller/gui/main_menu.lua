@@ -6,6 +6,7 @@ function PANEL:Init()
     self:Center()
     self:MakePopup()
     self:ParentToHUD()
+    self:SetPopupStayAtBack(true)
 end
 
 function PANEL:Paint( w, h )
