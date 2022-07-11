@@ -11,9 +11,5 @@ end
 
 function GM:PlayerConnect(name, ip)
     print(name .. " connected")
-
 end
 
-function GM:PlayerSpawn(ply)
-    print("I AM SPAWNED!")
-end 

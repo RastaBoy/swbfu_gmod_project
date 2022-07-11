@@ -44,12 +44,14 @@ local function BFUPlayerSpawn(ply, class_info)
             obj["status"] = BFU_IN_GAME
         end
     end
+
     ply:SetModel(class_info["model"])
-    ply:SetSlowWalkSpeed(140)
-    ply:SetWalkSpeed(155) 
-    ply:SetRunSpeed(215)
-    ply:SetMaxSpeed(215)
-    ply:SetJumpPower(160)
+    
+    ply:SetSlowWalkSpeed(classes_info[class_info["class"]]["walk_speed"] - 15)
+    ply:SetWalkSpeed(classes_info[class_info["class"]]["walk_speed"]) 
+    ply:SetRunSpeed(classes_info[class_info["class"]]["run_speed"])
+    ply:SetMaxSpeed(classes_info[class_info["class"]]["run_speed"])
+    ply:SetJumpPower(classes_info[class_info["class"]]["jump_power"])
 
     ply:SetObserverMode(0)
     ply:UnSpectate()        

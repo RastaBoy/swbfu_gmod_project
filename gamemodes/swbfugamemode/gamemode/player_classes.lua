@@ -1,4 +1,4 @@
-classes_info = {
+available_classes = {
     clone_trooper_ph1 = {
         name = "Clone Trooper Phase 1",
         class = "Trooper",
@@ -19,7 +19,17 @@ classes_info = {
     }
 }
 
+
+classes_info = {
+    Trooper = {
+        hp = 300,
+        jump_power = 260,
+        walk_speed = 155,
+        run_speed = 215
+    },
+}
+
 map_classes = {
-    classes_info["clone_trooper_ph1"],
-    classes_info["clone_trooper_ph2"]
+    available_classes["clone_trooper_ph1"],
+    available_classes["clone_trooper_ph2"]
 }
