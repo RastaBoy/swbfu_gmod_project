@@ -19,7 +19,6 @@ classes_info = {
     }
 }
 
-
 map_classes = {
     classes_info["clone_trooper_ph1"],
     classes_info["clone_trooper_ph2"]
