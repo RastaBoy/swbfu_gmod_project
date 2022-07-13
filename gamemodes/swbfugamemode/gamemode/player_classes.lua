@@ -4,8 +4,14 @@ available_classes = {
         class = "Trooper",
         model = "models/player/swbtc/phase 1 clone trooper.mdl",
         weapons = {
-            "Weapon 1",
-            "Weapon 2"
+            {
+                name = "DC-15a",
+                weapon = "weapon_752_dc15a"
+            },
+            {
+                name = "DC-17",
+                weapon = "weapon_752_dc17"
+            }
         }
     },
     clone_trooper_ph2 = {
@@ -13,8 +19,22 @@ available_classes = {
         class = "Trooper",
         model = "models/player/cody/commander cody.mdl",
         weapons = {
-            "Weapon 1",
-            "Weapon WOW"
+            {
+                name = "DC-15a",
+                weapon = "weapon_752_dc15a"
+            },
+            {
+                name = "DC-17",
+                weapon = "weapon_752_dc17"
+            },
+            {
+                name = "DC-17M-AT",
+                weapon = "weapon_752_dc17m_at"
+            },
+            {
+                name = "DC-17M-BR",
+                weapon = "weapon_752_dc17m_br"
+            }
         }
     }
 }

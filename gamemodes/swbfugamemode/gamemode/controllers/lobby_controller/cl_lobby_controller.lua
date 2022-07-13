@@ -144,7 +144,7 @@ net.Receive("SelectClass", function()
         draw.RoundedBox(5, 0, h*2/3, w, h*1/3, Color(0, 0, 255, 10))
         local class_info = "Name: " .. classesTable[player_selected_class]["name"] .. "\n" .. "Class: " .. classesTable[player_selected_class]["class"] .. "\n"
         for _, value in pairs(classesTable[player_selected_class]["weapons"]) do
-            class_info = class_info .. value .. "\n"
+            class_info = class_info .. value['name'] .. "\n"
         end
         draw.DrawText(class_info, "DermaLarge", w/8, h*2/3 + h*1/3/4, Color(255,255,255,255))
     end
