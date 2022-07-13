@@ -48,14 +48,16 @@ local function BFUPlayerSpawn(ply, class_info)
     ply:SetModel(class_info["model"])
     
     -- HP --
-    ply:SetHealth(classes_info[class_info["class"]]["hp"])
     ply:SetMaxHealth(classes_info[class_info["class"]]["hp"])
+    ply:SetHealth(classes_info[class_info["class"]]["hp"])
     -- WALK AND JUMPING --
     ply:SetSlowWalkSpeed(classes_info[class_info["class"]]["walk_speed"] - 15)
     ply:SetWalkSpeed(classes_info[class_info["class"]]["walk_speed"]) 
     ply:SetRunSpeed(classes_info[class_info["class"]]["run_speed"])
     ply:SetMaxSpeed(classes_info[class_info["class"]]["run_speed"])
     ply:SetJumpPower(classes_info[class_info["class"]]["jump_power"])
+
+    ply:SetMoveType(2)
 
     for _, obj in pairs(class_info["weapons"]) do
         ply:Give(obj["weapon"])
