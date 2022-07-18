@@ -13,6 +13,10 @@ function GM:PlayerConnect(name, ip)
     print(name .. " connected")
 end
 
+function GM:PlayerSpawn(ply) 
+	print("BFU STATUS: " .. ply.BFU_STATUS)
+end
+
 function GM:OnSpawnMenuOpen()
 	return false;
 end

@@ -1,0 +1,30 @@
+{
+    "classes_info": [
+        {
+            "name" : "Clone Trooper Phase 1",
+            "model" : "models/player/swbtc/phase 1 clone trooper.mdl",
+            "base_class" : "trooper",
+            "weapons":[
+                {
+                    "name" : "DC-17",
+                    "value" : "weapon_752_dc17"
+                }
+            ]
+        },
+        {
+            "name" : "Clone Commander Cody",
+            "model" : "models/player/cody/commander cody.mdl",
+            "base_class" : "commando",
+            "weapons":[
+                {
+                    "name" : "DC-17",
+                    "value" : "weapon_752_dc17"
+                },
+                {
+                    "name" : "DC-17M-AT",
+                    "value" : "weapon_752_dc17m_at"
+                }
+            ]
+        }
+    ]
+}
