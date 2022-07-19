@@ -116,7 +116,7 @@ function ClassSelectorDraw(classes_info)
     local modelViewer = vgui.Create("DModelPanel", modelViewerPanel)
     modelViewer:SetSize(mdvpSize["w"], mdvpSize["h"])
     modelViewer:SetModel(classes_info[player_selected_class]["model"])
-    modelViewer:SetCamPos(Vector(95, 0, 50))
+    modelViewer:SetCamPos(Vector(100, 0, 50))
 
     function modelViewerPanel:Paint(w, h)
         draw.RoundedBox(0, 0, 0, w, h, Color(0,0,0,0))

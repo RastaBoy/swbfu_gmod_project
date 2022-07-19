@@ -25,6 +25,36 @@
                     "value" : "weapon_752_dc17m_at"
                 }
             ]
+        },
+        {
+            "name" : "Clone Commander Dzuba",
+            "model" : "models/player/waxer/waxer.mdl",
+            "base_class" : "commando",
+            "weapons":[
+                {
+                    "name" : "DC-17",
+                    "value" : "weapon_752_dc17"
+                },
+                {
+                    "name" : "DC-17M-AT",
+                    "value" : "weapon_752_dc17m_at"
+                }
+            ]
+        },
+        {
+            "name" : "Clone Commander Kenny",
+            "model" : "models/player/212th/212th clone.mdl",
+            "base_class" : "commando",
+            "weapons":[
+                {
+                    "name" : "DC-17",
+                    "value" : "weapon_752_dc17"
+                },
+                {
+                    "name" : "DC-17M-AT",
+                    "value" : "weapon_752_dc17m_at"
+                }
+            ]
         }
     ]
 }
